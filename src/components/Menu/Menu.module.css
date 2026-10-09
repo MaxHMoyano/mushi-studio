@@ -1,0 +1,91 @@
+/* src/components/Menu/Menu.module.css */
+
+/* Floating trigger button containing RibbonIcon */
+.triggerButton {
+  position: fixed;
+  top: 0;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.triggerButton:hover {
+  transform: translateY(3px); /* Interactive subtle pull effect */
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+.triggerButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Semi-transparent drawer occupying ~33% width on the right */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 33vw; /* Occupies 1/3 of the right screen */
+  min-width: 300px; /* Minimum width threshold for smaller displays */
+  height: 100vh;
+  height: 100svh;
+  z-index: 999;
+  
+  /* Glassmorphism translucent background */
+  background: rgba(20, 20, 20, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  
+  border-left: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Nav links container */
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+/* Individual Link Item */
+.navItem {
+  font-family: var(--sans);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: var(--text-h);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.navItem:hover {
+  color: var(--accent);
+  transform: translateX(6px);
+}
+
+/* Mobile Fallback: On screens <= 640px wide, allow drawer to cover full screen */
+@media (max-width: 640px) {
+  .drawer {
+    width: 100vw;
+    min-width: 100vw;
+  }
+}
