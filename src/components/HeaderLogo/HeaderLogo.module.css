@@ -1,0 +1,38 @@
+/* src/components/HeaderLogo/HeaderLogo.module.css */
+
+.container {
+  position: fixed;
+  top: 1.25rem;
+  left: 2.5rem;
+  z-index: 990;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  user-select: none;
+}
+
+.logoImage {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brandName {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 1.75rem;
+  letter-spacing: -0.03em;
+  color: var(--text-h);
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.container:hover .brandName {
+  color: var(--accent);
+}

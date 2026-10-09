@@ -11,9 +11,9 @@ interface NavItem {
 
 const MENU_ITEMS: NavItem[] = [
   { label: 'Home', href: '#hero' },
-  { label: 'About', href: '#about' },
-  { label: 'Work', href: '#work' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Catty Bete', href: '#catty-bete' },
+  { label: 'Cemiterio do Guaras', href: '#cemiterio' },
+  { label: 'Nosotros', href: '#us' },
 ];
 
 export const Menu: React.FC = () => {

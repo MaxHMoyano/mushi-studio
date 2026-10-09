@@ -1,0 +1,78 @@
+/* src/components/BookLayout/EditorialSpread.module.css */
+
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    /* Gives slightly more space to narrative text */
+    gap: 4rem;
+    align-items: center;
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+}
+
+/* --- LEFT COLUMN: EDITORIAL TYPOGRAPHY --- */
+.textColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    text-align: left;
+}
+
+/* Big main chapter title */
+.titleHeader {
+    font-family: var(--heading);
+    font-size: clamp(2.5rem, 4vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text-h);
+    margin: 0;
+}
+
+/* Gold / accent highlighted standfirst paragraph */
+.highlightText {
+    font-family: var(--sans);
+    font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.65;
+    color: var(--accent);
+    /* Uses your theme accent color */
+    margin: 0;
+}
+
+/* Multi-paragraph narrative body text */
+.bodyText {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.paragraph {
+    font-family: var(--sans);
+    font-size: 1.025rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin: 0;
+    opacity: 0.9;
+    letter-spacing: -0.01em;
+}
+
+/* --- RIGHT COLUMN: CAROUSEL SLOT --- */
+.mediaColumn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Stack vertically on smaller screens */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 3rem 1.5rem;
+    }
+}

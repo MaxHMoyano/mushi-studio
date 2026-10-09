@@ -1,0 +1,98 @@
+/* src/components/BookLayout/IntroductionPage.module.css */
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 6rem 2rem;
+    background-color: var(--bg);
+    color: var(--text-h);
+}
+
+.content {
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Bigger hero logo slot */
+.logoWrapper {
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoImage {
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Optional soft tint transition */
+    transition: transform 0.3s ease;
+}
+
+/* Subtle fallback text if no image logo is passed yet */
+.logoPlaceholder {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: 2.5rem;
+    letter-spacing: -0.04em;
+    color: var(--text-h);
+    text-transform: lowercase;
+}
+
+/* "sobre a empresa MUSHI" Title */
+.title {
+    font-family: var(--heading);
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text-h);
+    margin: 0 0 1.75rem 0;
+    text-transform: lowercase;
+}
+
+/* Minimalist book divider line */
+.divider {
+    width: 44px;
+    height: 1px;
+    background-color: var(--accent);
+    margin-bottom: 2.25rem;
+    opacity: 0.8;
+}
+
+/* Studio introduction narrative */
+.description {
+    font-family: var(--sans);
+    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+    line-height: 1.8;
+    color: var(--text);
+    margin: 0;
+    opacity: 0.9;
+    letter-spacing: -0.01em;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 5rem 1.5rem;
+    }
+
+    .logoImage {
+        max-width: 180px;
+    }
+
+    .logoPlaceholder {
+        font-size: 2rem;
+    }
+}

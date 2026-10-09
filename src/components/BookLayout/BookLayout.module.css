@@ -1,0 +1,83 @@
+/* src/components/BookLayout/BookLayout.module.css */
+
+.bookContainer {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    overflow-y: scroll;
+    /* scroll-snap-type: y proximity; */
+    scroll-behavior: smooth;
+    perspective: 1400px;
+
+    /* Root background color with smooth transition */
+    background-color: var(--bg, #202020);
+    transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chapter {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    position: relative;
+    transform-style: preserve-3d;
+
+    /* Transparent background so parent container handles the color shift */
+    background: transparent;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* --- LAYOUT VARIANTS --- */
+
+/* 1. Centered Front-Facing Layout */
+.pageCenter {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+/* 2. Two-Column Spread Layout */
+.pageSplit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.leftColumn,
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+/* 3. Full-Width Edge-to-Edge Container */
+.pageFull {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .pageSplit {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

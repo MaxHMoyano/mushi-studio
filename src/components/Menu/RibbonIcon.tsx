@@ -11,8 +11,8 @@ interface RibbonIconProps {
 
 export const RibbonIcon: React.FC<RibbonIconProps> = ({
   isOpen,
-  width = 28,
-  height = 35,
+  width = 42,
+  height = 50,
   className,
 }) => {
   return (

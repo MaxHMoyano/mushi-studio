@@ -13,11 +13,11 @@ export default function Hero() {
         viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
-        <img
+        {/* <img
           src={logoUrl}
           alt='Mushi studios logo'
           className={styles.logo}
-        />
+        /> */}
         <h1 className={styles.title}>mushi studio</h1>
 
         {/* <p className={styles.subtitle}>Design & Motion Lab</p> */}
